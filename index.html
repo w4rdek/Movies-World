@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MyWebsite | Movies & Web Series</title>
+  <title>Movies World | Movies & Web Series</title>
 
   <style>
     * {
@@ -20,10 +20,9 @@
     body {
       font-family: Arial, sans-serif;
       background: #0b0b0b;
-      color: #fff;
+      color: white;
     }
 
-    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
@@ -32,7 +31,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 5%;
-      background: rgba(15, 15, 15, 0.96);
+      background: rgba(15, 15, 15, 0.97);
       border-bottom: 1px solid #292929;
     }
 
@@ -53,10 +52,9 @@
     }
 
     nav a:hover {
-      color: #fff;
+      color: white;
     }
 
-    /* HERO */
     .hero {
       min-height: 430px;
       display: flex;
@@ -106,7 +104,6 @@
       background: #b20710;
     }
 
-    /* SEARCH */
     .search-section {
       padding: 25px 5%;
       background: #111;
@@ -129,7 +126,6 @@
       border-color: #e50914;
     }
 
-    /* CATEGORIES */
     .categories {
       display: flex;
       justify-content: center;
@@ -155,7 +151,6 @@
       border-color: #e50914;
     }
 
-    /* CONTENT */
     main {
       max-width: 1250px;
       margin: auto;
@@ -177,7 +172,6 @@
       gap: 20px;
     }
 
-    /* CARDS */
     .movie-card {
       background: #181818;
       border-radius: 10px;
@@ -241,7 +235,6 @@
       padding: 50px 10px;
     }
 
-    /* FOOTER */
     footer {
       background: #151515;
       border-top: 1px solid #292929;
@@ -254,7 +247,6 @@
       color: white;
     }
 
-    /* MOBILE */
     @media (max-width: 700px) {
       nav {
         padding: 14px 4%;
@@ -309,9 +301,8 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">🎬 <span>My</span>Website</div>
+    <div class="logo">🎬 <span>Movies</span> World</div>
 
     <div>
       <a href="#home">Home</a>
@@ -320,24 +311,21 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <span class="badge">WELCOME</span>
+      <span class="badge">WELCOME TO MOVIES WORLD</span>
 
       <h1>Movies & Web Series</h1>
 
       <p>
-        Discover movies and web series on your own personal video website.
-        New content can be added here whenever you have videos that you own
-        or are licensed to use.
+        Welcome to Movies World — your personal movie and web series website.
+        Discover your own or properly licensed video content in one place.
       </p>
 
       <a href="#movies" class="hero-btn">Explore Now ▶</a>
     </div>
   </section>
 
-  <!-- SEARCH -->
   <section class="search-section">
     <input
       type="text"
@@ -346,7 +334,6 @@
     >
   </section>
 
-  <!-- CATEGORIES -->
   <div class="categories">
     <button class="category-btn active" data-category="all">All</button>
     <button class="category-btn" data-category="movie">Movies</button>
@@ -357,7 +344,6 @@
 
   <main>
 
-    <!-- MOVIES -->
     <section id="movies">
       <h2 class="section-heading">
         🔥 Latest <span>Movies</span>
@@ -408,7 +394,6 @@
       </div>
     </section>
 
-    <!-- WEB SERIES -->
     <section id="series">
       <h2 class="section-heading">
         📺 Latest <span>Web Series</span>
@@ -455,14 +440,13 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p><strong>🎬 MyWebsite</strong></p>
+    <p><strong>🎬 Movies World</strong></p>
     <p style="margin-top:8px;">
       Your personal movie & video website
     </p>
     <p style="margin-top:12px;">
-      © 2026 MyWebsite
+      © 2026 Movies World
     </p>
   </footer>
 
