@@ -1,81 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Movies World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-            margin: 0;
-            padding: 20px;
-        }
+  <title>MyWebsite</title>
 
-        h1 {
-            text-align: center;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        h2 {
-            margin-top: 35px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
 
-        .movies {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
+    header {
+      background: #1b1b1b;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
 
-        .card {
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
 
-        button {
-            padding: 8px 15px;
-            cursor: pointer;
-        }
-    </style>
+    .search-box {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 13px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 20px;
+      background: #151515;
+    }
+
+    .category-btn {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: #e50914;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .movie-card {
+      background: #1d1d1d;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .movie-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .poster {
+      width: 100%;
+      height: 260px;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .movie-info {
+      padding: 14px;
+    }
+
+    .movie-info h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .movie-info p {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .watch-btn {
+      display: inline-block;
+      background: #e50914;
+      color: white;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .watch-btn:hover {
+      background: #b20710;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      color: #aaa;
+      padding: 40px 10px;
+      font-size: 18px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      text-align: center;
+      background: #1b1b1b;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .movies {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .poster {
+        height: 220px;
+      }
+
+      .movie-info {
+        padding: 10px;
+      }
+
+      .movie-info h3 {
+        font-size: 15px;
+      }
+
+      .watch-btn {
+        padding: 8px 11px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>🎬 Movies World</h1>
-    <p style="text-align:center;">Movies & Web Series</p>
+  <header>
+    <h1>🎬 MyWebsite</h1>
 
-    <h2>🔥 Latest Movies</h2>
-    <div class="movies">
-        <div class="card">Movie 1<br><br><button>Watch</button></div>
-        <div class="card">Movie 2<br><br><button>Watch</button></div>
-        <div class="card">Movie 3<br><br><button>Watch</button></div>
-        <div class="card">Movie 4<br><br><button>Watch</button></div>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search movies or web series..."
+      >
+    </div>
+  </header>
+
+  <div class="categories">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="movie">Movies</button>
+    <button class="category-btn" data-category="series">Web Series</button>
+  </div>
+
+  <main>
+    <h2 class="section-title">Latest Videos</h2>
+
+    <div class="movies" id="movieContainer">
+
+      <!-- Example Movie -->
+      <div class="movie-card" data-category="movie">
+        <div class="poster">
+          Poster
+        </div>
+
+        <div class="movie-info">
+          <h3>My Movie</h3>
+          <p>Movie • 2026</p>
+
+          <a href="#" class="watch-btn">
+            ▶ Watch
+          </a>
+        </div>
+      </div>
+
+      <!-- Example Web Series -->
+      <div class="movie-card" data-category="series">
+        <div class="poster">
+          Poster
+        </div>
+
+        <div class="movie-info">
+          <h3>My Web Series</h3>
+          <p>Web Series • 2026</p>
+
+          <a href="#" class="watch-btn">
+            ▶ Watch
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <h2>📺 Latest Web Series</h2>
-    <div class="movies">
-        <div class="card">Series 1<br><br><button>Watch</button></div>
-        <div class="card">Series 2<br><br><button>Watch</button></div>
-        <div class="card">Series 3<br><br><button>Watch</button></div>
-        <div class="card">Series 4<br><br><button>Watch</button></div>
+    <div class="no-results" id="noResults">
+      No videos found.
     </div>
+  </main>
 
-    <h2>🎞️ Bollywood</h2>
-    <div class="movies">
-        <div class="card">Movie 1<br><br><button>Watch</button></div>
-        <div class="card">Movie 2<br><br><button>Watch</button></div>
-        <div class="card">Movie 3<br><br><button>Watch</button></div>
-        <div class="card">Movie 4<br><br><button>Watch</button></div>
-    </div>
+  <footer>
+    <p>© 2026 MyWebsite. All rights reserved.</p>
+  </footer>
 
-    <h2>🌎 Hollywood</h2>
-    <div class="movies">
-        <div class="card">Movie 1<br><br><button>Watch</button></div>
-        <div class="card">Movie 2<br><br><button>Watch</button></div>
-        <div class="card">Movie 3<br><br><button>Watch</button></div>
-        <div class="card">Movie 4<br><br><button>Watch</button></div>
-    </div>
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const movieCards = document.querySelectorAll(".movie-card");
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const noResults = document.getElementById("noResults");
+
+    let selectedCategory = "all";
+
+    function filterMovies() {
+      const searchText = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      movieCards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchesSearch = title.includes(searchText);
+        const matchesCategory =
+          selectedCategory === "all" ||
+          category === selectedCategory;
+
+        if (matchesSearch && matchesCategory) {
+          card.style.display = "";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", filterMovies);
+
+    categoryButtons.forEach(button => {
+      button.addEventListener("click", () => {
+
+        categoryButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        selectedCategory = button.dataset.category;
+
+        filterMovies();
+      });
+    });
+  </script>
 
 </body>
-</html><div class="card">Animal<br><br><button>Watch</button></div>
+</html>
