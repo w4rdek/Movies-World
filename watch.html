@@ -8,6 +8,9 @@
 
   <title>Watch | Movies World</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
 
     * {
@@ -22,8 +25,6 @@
       color: white;
       min-height: 100vh;
     }
-
-    /* HEADER */
 
     header {
       background: #141414;
@@ -67,8 +68,6 @@
       background: #e50914;
     }
 
-    /* MAIN */
-
     main {
       max-width: 1100px;
       margin: 35px auto;
@@ -91,8 +90,6 @@
       background: #000;
     }
 
-    /* TITLE */
-
     .video-info {
       padding: 22px 0;
     }
@@ -106,8 +103,6 @@
       color: #999;
       font-size: 14px;
     }
-
-    /* BACK BUTTON */
 
     .back-button {
       display: inline-block;
@@ -125,8 +120,6 @@
       background: #b20710;
     }
 
-    /* NOTICE */
-
     .notice {
       margin-top: 25px;
       padding: 15px;
@@ -137,8 +130,6 @@
       border-radius: 5px;
       font-size: 14px;
     }
-
-    /* FOOTER */
 
     footer {
       margin-top: 60px;
@@ -152,8 +143,6 @@
     footer strong {
       color: white;
     }
-
-    /* MOBILE */
 
     @media (max-width: 600px) {
 
@@ -197,11 +186,7 @@
 
 </head>
 
-
 <body>
-
-
-  <!-- HEADER -->
 
   <header>
 
@@ -219,13 +204,7 @@
 
   </header>
 
-
-  <!-- MAIN -->
-
   <main>
-
-
-    <!-- VIDEO PLAYER -->
 
     <div class="player-box">
 
@@ -245,9 +224,6 @@
 
     </div>
 
-
-    <!-- VIDEO INFORMATION -->
-
     <div class="video-info">
 
       <h1
@@ -260,7 +236,6 @@
         🎬 Movies World • Video Player
       </p>
 
-
       <a
         href="index.html"
         class="back-button">
@@ -269,21 +244,14 @@
 
     </div>
 
-
-    <!-- NOTICE -->
-
     <div class="notice">
 
-      This website is for your own, licensed, or
-      public-domain video content.
+      This Website is For Your Own, Licensed, Or
+      Public-Domain Video Content.
 
     </div>
 
-
   </main>
-
-
-  <!-- FOOTER -->
 
   <footer>
 
@@ -294,7 +262,7 @@
     <br>
 
     <p>
-      Your personal movie & video website
+      Your Personal Movie & Video Website
     </p>
 
     <br>
@@ -305,22 +273,13 @@
 
   </footer>
 
-
-  <!-- JAVASCRIPT -->
-
   <script>
-
-    // Get movie title from URL
 
     const urlParams =
       new URLSearchParams(window.location.search);
 
-
     const title =
       urlParams.get("title");
-
-
-    // Change title if provided
 
     if (title) {
 
@@ -332,12 +291,8 @@
 
     }
 
-
-    // Video error handling
-
     const video =
       document.getElementById("videoPlayer");
-
 
     video.addEventListener("error", function() {
 
@@ -349,7 +304,6 @@
 
   </script>
 
-
 </body>
 
-</html><link rel="icon" type="image/png" href="favicon.png">
+</html>

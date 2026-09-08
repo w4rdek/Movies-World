@@ -9,6 +9,9 @@
 
   <title>Movies World | Movies & Web Series</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     * {
       box-sizing: border-box;
@@ -28,8 +31,6 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-
-    /* ================= HEADER ================= */
 
     header {
       background: rgba(20, 20, 20, 0.92);
@@ -55,8 +56,6 @@
     .logo span {
       color: #e50914;
     }
-
-    /* ================= SEARCH ================= */
 
     .search-box {
       max-width: 650px;
@@ -92,8 +91,6 @@
         0 8px 30px rgba(0, 0, 0, 0.35);
       transform: translateY(-2px);
     }
-
-    /* ================= HERO ================= */
 
     .hero {
       max-width: 1200px;
@@ -170,8 +167,6 @@
       animation: textReveal 1.2s ease both;
     }
 
-    /* ================= CATEGORIES ================= */
-
     .categories {
       display: flex;
       justify-content: center;
@@ -208,8 +203,6 @@
       transform: translateY(-2px);
     }
 
-    /* ================= MAIN ================= */
-
     main {
       max-width: 1200px;
       margin: auto;
@@ -235,15 +228,11 @@
       background: #e50914;
     }
 
-    /* ================= MOVIE GRID ================= */
-
     .movies {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 22px;
     }
-
-    /* ================= MOVIE CARD ================= */
 
     .movie-card {
       background: linear-gradient(145deg, #1d1d1d, #131313);
@@ -252,39 +241,20 @@
       overflow: hidden;
       position: relative;
       box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
       opacity: 0;
       animation: cardAppear 0.7s ease forwards;
-
       transition:
         transform 0.45s cubic-bezier(.2,.8,.2,1),
         box-shadow 0.45s ease,
         border-color 0.45s ease;
     }
 
-    .movie-card:nth-child(1) {
-      animation-delay: 0.08s;
-    }
-
-    .movie-card:nth-child(2) {
-      animation-delay: 0.16s;
-    }
-
-    .movie-card:nth-child(3) {
-      animation-delay: 0.24s;
-    }
-
-    .movie-card:nth-child(4) {
-      animation-delay: 0.32s;
-    }
-
-    .movie-card:nth-child(5) {
-      animation-delay: 0.40s;
-    }
-
-    .movie-card:nth-child(6) {
-      animation-delay: 0.48s;
-    }
+    .movie-card:nth-child(1) { animation-delay: 0.08s; }
+    .movie-card:nth-child(2) { animation-delay: 0.16s; }
+    .movie-card:nth-child(3) { animation-delay: 0.24s; }
+    .movie-card:nth-child(4) { animation-delay: 0.32s; }
+    .movie-card:nth-child(5) { animation-delay: 0.40s; }
+    .movie-card:nth-child(6) { animation-delay: 0.48s; }
 
     .movie-card:hover {
       transform: translateY(-10px) scale(1.025);
@@ -293,8 +263,6 @@
         0 18px 40px rgba(0,0,0,0.55),
         0 0 25px rgba(229,9,20,0.08);
     }
-
-    /* ================= POSTER ================= */
 
     .poster {
       width: 100%;
@@ -336,8 +304,6 @@
       transform: scale(1.035);
     }
 
-    /* ================= MOVIE INFO ================= */
-
     .movie-info {
       padding: 15px;
     }
@@ -358,8 +324,6 @@
       margin-bottom: 13px;
     }
 
-    /* ================= WATCH BUTTON ================= */
-
     .watch-btn {
       width: 100%;
       padding: 11px;
@@ -372,7 +336,6 @@
       font-weight: bold;
       position: relative;
       overflow: hidden;
-
       transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -403,15 +366,12 @@
     .watch-btn:hover {
       transform: translateY(-2px);
       filter: brightness(1.08);
-      box-shadow:
-        0 8px 22px rgba(229,9,20,0.3);
+      box-shadow: 0 8px 22px rgba(229,9,20,0.3);
     }
 
     .watch-btn:active {
       transform: scale(0.97);
     }
-
-    /* ================= NO RESULTS ================= */
 
     .no-results {
       display: none;
@@ -421,8 +381,6 @@
       font-size: 18px;
       animation: fadeIn 0.4s ease;
     }
-
-    /* ================= FOOTER ================= */
 
     footer {
       margin-top: 30px;
@@ -445,14 +403,11 @@
       color: #aaa;
     }
 
-    /* ================= ANIMATIONS ================= */
-
     @keyframes headerDown {
       from {
         opacity: 0;
         transform: translateY(-25px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -463,7 +418,6 @@
       0%, 100% {
         text-shadow: 0 0 0 rgba(229,9,20,0);
       }
-
       50% {
         text-shadow: 0 0 18px rgba(229,9,20,0.18);
       }
@@ -474,7 +428,6 @@
         opacity: 0;
         transform: translateY(25px) scale(0.98);
       }
-
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -485,7 +438,6 @@
       0%, 100% {
         transform: scale(1);
       }
-
       50% {
         transform: scale(1.04);
       }
@@ -495,7 +447,6 @@
       0%, 100% {
         transform: translate(0, 0);
       }
-
       50% {
         transform: translate(35px, 25px);
       }
@@ -506,7 +457,6 @@
         opacity: 0;
         transform: translateY(12px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -518,7 +468,6 @@
         opacity: 0;
         transform: translateY(25px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -529,13 +478,10 @@
       from {
         opacity: 0;
       }
-
       to {
         opacity: 1;
       }
     }
-
-    /* ================= MOBILE ================= */
 
     @media (max-width: 600px) {
 
@@ -608,8 +554,6 @@
       }
     }
 
-    /* Accessibility */
-
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -643,7 +587,6 @@
 
   </header>
 
-
   <section class="hero">
 
     <div class="hero-badge">
@@ -658,7 +601,6 @@
     </p>
 
   </section>
-
 
   <div class="categories">
 
@@ -684,28 +626,21 @@
 
   </div>
 
-
   <main>
 
     <h2 class="section-title">
       Latest Videos
     </h2>
 
-
     <div class="movies" id="movieContainer">
 
-
-      <!-- MOVIE 1 -->
-
       <div class="movie-card" data-category="movie">
-
         <div class="poster">
           🎬<br>
           Movie Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Movie 01</h3>
 
           <p>
@@ -717,23 +652,16 @@
             onclick="openWatchPage('My Movie 01')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- MOVIE 2 -->
-
       <div class="movie-card" data-category="bollywood">
-
         <div class="poster">
           🎞️<br>
           Bollywood Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Bollywood Movie</h3>
 
           <p>
@@ -745,23 +673,16 @@
             onclick="openWatchPage('My Bollywood Movie')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- MOVIE 3 -->
-
       <div class="movie-card" data-category="hollywood">
-
         <div class="poster">
           🎥<br>
           Hollywood Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Hollywood Movie</h3>
 
           <p>
@@ -773,23 +694,16 @@
             onclick="openWatchPage('My Hollywood Movie')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- SERIES 1 -->
-
       <div class="movie-card" data-category="series">
-
         <div class="poster">
           📺<br>
           Series Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Web Series 01</h3>
 
           <p>
@@ -801,23 +715,16 @@
             onclick="openWatchPage('My Web Series 01')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- SERIES 2 -->
-
       <div class="movie-card" data-category="series">
-
         <div class="poster">
           📺<br>
           Series Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Web Series 02</h3>
 
           <p>
@@ -829,23 +736,16 @@
             onclick="openWatchPage('My Web Series 02')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- MOVIE 4 -->
-
       <div class="movie-card" data-category="movie">
-
         <div class="poster">
           🎬<br>
           Movie Poster
         </div>
 
         <div class="movie-info">
-
           <h3>My Movie 02</h3>
 
           <p>
@@ -857,21 +757,16 @@
             onclick="openWatchPage('My Movie 02')">
             ▶ Watch Now
           </button>
-
         </div>
-
       </div>
 
-
     </div>
-
 
     <div class="no-results" id="noResults">
       No Videos Found.
     </div>
 
   </main>
-
 
   <footer>
 
@@ -893,7 +788,6 @@
 
   </footer>
 
-
   <script>
 
     const searchInput =
@@ -908,14 +802,9 @@
     const noResults =
       document.getElementById("noResults");
 
-
     let selectedCategory = "all";
 
-
-    /* SEARCH */
-
     searchInput.addEventListener("input", filterMovies);
-
 
     function filterMovies() {
 
@@ -923,7 +812,6 @@
         searchInput.value.toLowerCase().trim();
 
       let visibleCount = 0;
-
 
       movieCards.forEach(card => {
 
@@ -935,15 +823,12 @@
         const category =
           card.dataset.category;
 
-
         const matchesSearch =
           title.includes(searchText);
-
 
         const matchesCategory =
           selectedCategory === "all" ||
           category === selectedCategory;
-
 
         if (matchesSearch && matchesCategory) {
 
@@ -959,16 +844,12 @@
 
       });
 
-
       noResults.style.display =
         visibleCount === 0
         ? "block"
         : "none";
 
     }
-
-
-    /* CATEGORIES */
 
     categoryButtons.forEach(button => {
 
@@ -978,22 +859,16 @@
           btn.classList.remove("active");
         });
 
-
         button.classList.add("active");
-
 
         selectedCategory =
           button.dataset.category;
-
 
         filterMovies();
 
       });
 
     });
-
-
-    /* WATCH PAGE */
 
     function openWatchPage(title) {
 
@@ -1008,4 +883,4 @@
   </script>
 
 </body>
-</html><link rel="icon" type="image/png" href="favicon.png">
+</html>
