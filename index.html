@@ -23,149 +23,120 @@
       color: white;
     }
 
-    nav {
+    /* HEADER */
+    header {
+      background: #141414;
+      padding: 20px 15px;
+      text-align: center;
+      border-bottom: 1px solid #292929;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 5%;
-      background: rgba(15, 15, 15, 0.97);
-      border-bottom: 1px solid #292929;
+      z-index: 100;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
+      margin-bottom: 15px;
     }
 
     .logo span {
       color: #e50914;
     }
 
-    nav a {
-      color: #ddd;
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    .hero {
-      min-height: 430px;
-      display: flex;
-      align-items: center;
-      padding: 60px 7%;
-      background:
-        linear-gradient(90deg, #0b0b0b 25%, rgba(11,11,11,.75), rgba(11,11,11,.25)),
-        linear-gradient(180deg, #252525, #101010);
-    }
-
-    .hero-content {
+    .search-box {
       max-width: 650px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e50914;
-      padding: 7px 12px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: #ccc;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #e50914;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .hero-btn:hover {
-      background: #b20710;
-    }
-
-    .search-section {
-      padding: 25px 5%;
-      background: #111;
+      margin: auto;
     }
 
     #searchInput {
-      display: block;
-      width: min(650px, 100%);
-      margin: auto;
+      width: 100%;
       padding: 14px 18px;
       border: 1px solid #333;
-      border-radius: 8px;
-      background: #1b1b1b;
+      border-radius: 25px;
+      background: #222;
       color: white;
+      font-size: 16px;
       outline: none;
-      font-size: 15px;
+    }
+
+    #searchInput::placeholder {
+      color: #999;
     }
 
     #searchInput:focus {
       border-color: #e50914;
     }
 
+    /* HERO */
+    .hero {
+      max-width: 1200px;
+      margin: 25px auto 0;
+      padding: 50px 25px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #242424, #111);
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e50914;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #bbb;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* CATEGORIES */
     .categories {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      padding: 15px 5% 25px;
-      background: #111;
+      padding: 25px 15px;
     }
 
     .category-btn {
-      border: 1px solid #333;
-      background: #202020;
-      color: #ddd;
-      padding: 9px 17px;
+      padding: 10px 18px;
+      border: none;
       border-radius: 20px;
+      background: #292929;
+      color: white;
       cursor: pointer;
+      font-size: 14px;
     }
 
     .category-btn:hover,
     .category-btn.active {
       background: #e50914;
-      color: white;
-      border-color: #e50914;
     }
 
+    /* MAIN */
     main {
-      max-width: 1250px;
+      max-width: 1200px;
       margin: auto;
-      padding: 25px 5% 50px;
+      padding: 10px 15px 30px;
     }
 
-    .section-heading {
+    .section-title {
+      font-size: 25px;
       margin: 20px 0;
-      font-size: 24px;
     }
 
-    .section-heading span {
-      color: #e50914;
-    }
-
+    /* MOVIE GRID */
     .movies {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -176,25 +147,25 @@
       background: #181818;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid #242424;
-      transition: transform .25s, border-color .25s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .movie-card:hover {
       transform: translateY(-6px);
-      border-color: #444;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
 
     .poster {
+      width: 100%;
       height: 270px;
+      background: linear-gradient(135deg, #333, #1b1b1b);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(145deg, #303030, #151515);
       color: #aaa;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 17px;
+      padding: 10px;
     }
 
     .movie-info {
@@ -203,23 +174,23 @@
 
     .movie-info h3 {
       font-size: 17px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    .meta {
+    .movie-info p {
       color: #999;
-      font-size: 12px;
-      margin-bottom: 12px;
+      font-size: 13px;
+      margin-bottom: 13px;
     }
 
     .watch-btn {
-      display: block;
-      text-align: center;
-      padding: 9px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
       background: #e50914;
       color: white;
-      text-decoration: none;
-      border-radius: 6px;
+      cursor: pointer;
       font-size: 14px;
       font-weight: bold;
     }
@@ -228,50 +199,101 @@
       background: #b20710;
     }
 
+    /* VIDEO PLAYER */
+    .player-section {
+      display: none;
+      background: #171717;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 10px 0 30px;
+    }
+
+    .player-section h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-height: 550px;
+      background: black;
+      border-radius: 8px;
+    }
+
+    .player-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .close-player {
+      padding: 9px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .close-player:hover {
+      background: #444;
+    }
+
+    /* NO RESULTS */
     .no-results {
       display: none;
       text-align: center;
-      color: #aaa;
+      color: #999;
       padding: 50px 10px;
+      font-size: 18px;
     }
 
+    /* FOOTER */
     footer {
-      background: #151515;
-      border-top: 1px solid #292929;
-      padding: 30px 5%;
+      margin-top: 30px;
+      padding: 30px 15px;
       text-align: center;
-      color: #888;
+      background: #141414;
+      color: #777;
+      border-top: 1px solid #292929;
     }
 
     footer strong {
       color: white;
     }
 
-    @media (max-width: 700px) {
-      nav {
-        padding: 14px 4%;
-      }
+    /* MOBILE */
+    @media (max-width: 600px) {
 
-      nav a {
-        margin-left: 10px;
-        font-size: 12px;
+      header {
+        padding: 16px 12px;
       }
 
       .logo {
-        font-size: 20px;
+        font-size: 25px;
       }
 
       .hero {
-        min-height: 360px;
-        padding: 45px 6%;
+        margin: 15px 10px 0;
+        padding: 40px 18px;
       }
 
-      .hero h1 {
-        font-size: 34px;
+      .hero h2 {
+        font-size: 29px;
       }
 
       .hero p {
         font-size: 14px;
+      }
+
+      .categories {
+        padding: 18px 10px;
+      }
+
+      .category-btn {
+        padding: 9px 14px;
+        font-size: 13px;
       }
 
       .movies {
@@ -280,8 +302,8 @@
       }
 
       .poster {
-        height: 215px;
-        font-size: 15px;
+        height: 220px;
+        font-size: 14px;
       }
 
       .movie-info {
@@ -292,8 +314,21 @@
         font-size: 14px;
       }
 
-      .watch-btn {
+      .movie-info p {
         font-size: 12px;
+      }
+
+      .watch-btn {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      .player-section {
+        padding: 12px;
+      }
+
+      .player-section h2 {
+        font-size: 18px;
       }
     }
   </style>
@@ -301,208 +336,452 @@
 
 <body>
 
-  <nav>
-    <div class="logo">🎬 <span>Movies</span> World</div>
+  <!-- HEADER -->
+  <header>
 
-    <div>
-      <a href="#home">Home</a>
-      <a href="#movies">Movies</a>
-      <a href="#series">Series</a>
+    <div class="logo">
+      🎬 <span>Movies</span> World
     </div>
-  </nav>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <span class="badge">WELCOME TO MOVIES WORLD</span>
-
-      <h1>Movies & Web Series</h1>
-
-      <p>
-        Welcome to Movies World — your personal movie and web series website.
-        Discover your own or properly licensed video content in one place.
-      </p>
-
-      <a href="#movies" class="hero-btn">Explore Now ▶</a>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search movies or web series..."
+      >
     </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-badge">
+      WELCOME TO MOVIES WORLD
+    </div>
+
+    <h2>Movies & Web Series</h2>
+
+    <p>
+      Welcome to Movies World — Your Personal Movie and Web Series Website.
+      Discover Your Own or properly licensed Video Content in One Place.
+    </p>
+
   </section>
 
-  <section class="search-section">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎 Search movies or web series..."
-    >
-  </section>
 
+  <!-- CATEGORIES -->
   <div class="categories">
-    <button class="category-btn active" data-category="all">All</button>
-    <button class="category-btn" data-category="movie">Movies</button>
-    <button class="category-btn" data-category="series">Web Series</button>
-    <button class="category-btn" data-category="bollywood">Bollywood</button>
-    <button class="category-btn" data-category="hollywood">Hollywood</button>
+
+    <button class="category-btn active" data-category="all">
+      All
+    </button>
+
+    <button class="category-btn" data-category="movie">
+      Movies
+    </button>
+
+    <button class="category-btn" data-category="series">
+      Web Series
+    </button>
+
+    <button class="category-btn" data-category="bollywood">
+      Bollywood
+    </button>
+
+    <button class="category-btn" data-category="hollywood">
+      Hollywood
+    </button>
+
   </div>
+
 
   <main>
 
-    <section id="movies">
-      <h2 class="section-heading">
-        🔥 Latest <span>Movies</span>
+    <!-- VIDEO PLAYER -->
+    <div class="player-section" id="playerSection">
+
+      <h2 id="playerTitle">
+        ▶ Now Playing
       </h2>
 
-      <div class="movies">
+      <video id="videoPlayer" controls>
 
-        <div class="movie-card" data-category="movie bollywood">
-          <div class="poster">MOVIE 01</div>
+        <!-- TEST VIDEO -->
+        <source
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          type="video/mp4"
+        >
 
-          <div class="movie-info">
-            <h3>My Movie 01</h3>
-            <div class="meta">Movie • 2026 • Hindi</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
+        Your browser does not support video playback.
+
+      </video>
+
+      <div class="player-buttons">
+
+        <button
+          class="close-player"
+          onclick="closePlayer()">
+          ✕ Close Player
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- VIDEOS -->
+    <h2 class="section-title">
+      Latest Videos
+    </h2>
+
+
+    <div class="movies" id="movieContainer">
+
+
+      <!-- MOVIE 1 -->
+      <div class="movie-card" data-category="movie">
+
+        <div class="poster">
+          🎬<br>
+          Movie Poster
         </div>
 
-        <div class="movie-card" data-category="movie hollywood">
-          <div class="poster">MOVIE 02</div>
+        <div class="movie-info">
 
-          <div class="movie-info">
-            <h3>My Movie 02</h3>
-            <div class="meta">Movie • 2026 • English</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
-        </div>
+          <h3>My Movie 01</h3>
 
-        <div class="movie-card" data-category="movie bollywood">
-          <div class="poster">MOVIE 03</div>
+          <p>
+            Movie • 2026
+          </p>
 
-          <div class="movie-info">
-            <h3>My Movie 03</h3>
-            <div class="meta">Movie • 2026 • Hindi</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
-        </div>
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Movie 01')">
+            ▶ Watch Now
+          </button>
 
-        <div class="movie-card" data-category="movie hollywood">
-          <div class="poster">MOVIE 04</div>
-
-          <div class="movie-info">
-            <h3>My Movie 04</h3>
-            <div class="meta">Movie • 2026 • English</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
         </div>
 
       </div>
-    </section>
 
-    <section id="series">
-      <h2 class="section-heading">
-        📺 Latest <span>Web Series</span>
-      </h2>
 
-      <div class="movies">
+      <!-- MOVIE 2 -->
+      <div class="movie-card" data-category="bollywood">
 
-        <div class="movie-card" data-category="series">
-          <div class="poster">SERIES 01</div>
-
-          <div class="movie-info">
-            <h3>My Series 01</h3>
-            <div class="meta">Series • 2026 • Season 1</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
+        <div class="poster">
+          🎞️<br>
+          Bollywood Poster
         </div>
 
-        <div class="movie-card" data-category="series">
-          <div class="poster">SERIES 02</div>
+        <div class="movie-info">
 
-          <div class="movie-info">
-            <h3>My Series 02</h3>
-            <div class="meta">Series • 2026 • Season 1</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
-        </div>
+          <h3>My Bollywood Movie</h3>
 
-        <div class="movie-card" data-category="series">
-          <div class="poster">SERIES 03</div>
+          <p>
+            Bollywood • 2026
+          </p>
 
-          <div class="movie-info">
-            <h3>My Series 03</h3>
-            <div class="meta">Series • 2026 • Season 1</div>
-            <a href="#" class="watch-btn">▶ Watch Now</a>
-          </div>
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Bollywood Movie')">
+            ▶ Watch Now
+          </button>
+
         </div>
 
       </div>
-    </section>
 
+
+      <!-- MOVIE 3 -->
+      <div class="movie-card" data-category="hollywood">
+
+        <div class="poster">
+          🎥<br>
+          Hollywood Poster
+        </div>
+
+        <div class="movie-info">
+
+          <h3>My Hollywood Movie</h3>
+
+          <p>
+            Hollywood • 2026
+          </p>
+
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Hollywood Movie')">
+            ▶ Watch Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SERIES 1 -->
+      <div class="movie-card" data-category="series">
+
+        <div class="poster">
+          📺<br>
+          Series Poster
+        </div>
+
+        <div class="movie-info">
+
+          <h3>My Web Series 01</h3>
+
+          <p>
+            Web Series • 2026
+          </p>
+
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Web Series 01')">
+            ▶ Watch Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SERIES 2 -->
+      <div class="movie-card" data-category="series">
+
+        <div class="poster">
+          📺<br>
+          Series Poster
+        </div>
+
+        <div class="movie-info">
+
+          <h3>My Web Series 02</h3>
+
+          <p>
+            Web Series • 2026
+          </p>
+
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Web Series 02')">
+            ▶ Watch Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- MOVIE 4 -->
+      <div class="movie-card" data-category="movie">
+
+        <div class="poster">
+          🎬<br>
+          Movie Poster
+        </div>
+
+        <div class="movie-info">
+
+          <h3>My Movie 02</h3>
+
+          <p>
+            Movie • 2026
+          </p>
+
+          <button
+            class="watch-btn"
+            onclick="openPlayer('My Movie 02')">
+            ▶ Watch Now
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- NO RESULTS -->
     <div class="no-results" id="noResults">
       No videos found.
     </div>
 
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <p><strong>🎬 Movies World</strong></p>
-    <p style="margin-top:8px;">
+
+    <p>
+      🎬 <strong>Movies World</strong>
+    </p>
+
+    <br>
+
+    <p>
       Your personal movie & video website
     </p>
-    <p style="margin-top:12px;">
-      © 2026 Movies World
+
+    <br>
+
+    <p>
+      © 2026 Movies World. All rights reserved.
     </p>
+
   </footer>
 
+
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const cards = document.querySelectorAll(".movie-card");
-    const buttons = document.querySelectorAll(".category-btn");
-    const noResults = document.getElementById("noResults");
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const movieCards =
+      document.querySelectorAll(".movie-card");
+
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
+
+    const noResults =
+      document.getElementById("noResults");
+
+    const playerSection =
+      document.getElementById("playerSection");
+
+    const videoPlayer =
+      document.getElementById("videoPlayer");
+
+    const playerTitle =
+      document.getElementById("playerTitle");
+
 
     let selectedCategory = "all";
 
-    function filterCards() {
-      const searchText = searchInput.value.toLowerCase().trim();
-      let visible = 0;
 
-      cards.forEach(card => {
+    /* SEARCH + CATEGORY FILTER */
+
+    function filterMovies() {
+
+      const searchText =
+        searchInput.value.toLowerCase().trim();
+
+      let visibleCount = 0;
+
+
+      movieCards.forEach(card => {
+
         const title =
-          card.querySelector("h3").textContent.toLowerCase();
+          card.querySelector("h3")
+          .textContent
+          .toLowerCase();
 
-        const categories =
-          card.dataset.category.toLowerCase().split(" ");
+        const category =
+          card.dataset.category;
 
-        const matchesSearch = title.includes(searchText);
+
+        const matchesSearch =
+          title.includes(searchText);
+
 
         const matchesCategory =
           selectedCategory === "all" ||
-          categories.includes(selectedCategory);
+          category === selectedCategory;
+
 
         if (matchesSearch && matchesCategory) {
+
           card.style.display = "";
-          visible++;
+
+          visibleCount++;
+
         } else {
+
           card.style.display = "none";
+
         }
+
       });
 
+
       noResults.style.display =
-        visible === 0 ? "block" : "none";
+        visibleCount === 0
+        ? "block"
+        : "none";
+
     }
 
-    searchInput.addEventListener("input", filterCards);
 
-    buttons.forEach(button => {
+    searchInput.addEventListener(
+      "input",
+      filterMovies
+    );
+
+
+    /* CATEGORY BUTTONS */
+
+    categoryButtons.forEach(button => {
+
       button.addEventListener("click", () => {
 
-        buttons.forEach(btn =>
-          btn.classList.remove("active")
-        );
+        categoryButtons.forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
 
         button.classList.add("active");
 
-        selectedCategory = button.dataset.category;
 
-        filterCards();
+        selectedCategory =
+          button.dataset.category;
+
+
+        filterMovies();
+
       });
+
     });
+
+
+    /* OPEN VIDEO PLAYER */
+
+    function openPlayer(title) {
+
+      playerTitle.textContent =
+        "▶ " + title;
+
+
+      playerSection.style.display =
+        "block";
+
+
+      playerSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+
+      videoPlayer.play().catch(() => {});
+
+    }
+
+
+    /* CLOSE VIDEO PLAYER */
+
+    function closePlayer() {
+
+      videoPlayer.pause();
+
+      playerSection.style.display =
+        "none";
+
+    }
+
   </script>
 
 </body>
