@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Watch | Movies World</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #141414;
+      padding: 18px 20px;
+      border-bottom: 1px solid #292929;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #e50914;
+    }
+
+    .home-btn {
+      color: white;
+      text-decoration: none;
+      background: #292929;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .home-btn:hover {
+      background: #e50914;
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .player-box {
+      width: 100%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      min-height: 300px;
+      display: block;
+      background: #000;
+    }
+
+    /* TITLE */
+
+    .video-info {
+      padding: 22px 0;
+    }
+
+    .video-title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .video-type {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* BACK BUTTON */
+
+    .back-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 11px 18px;
+      background: #e50914;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .back-button:hover {
+      background: #b20710;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      background: #181818;
+      border-left: 4px solid #e50914;
+      color: #aaa;
+      line-height: 1.5;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 60px;
+      padding: 30px 20px;
+      background: #141414;
+      border-top: 1px solid #292929;
+      text-align: center;
+      color: #777;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .home-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      main {
+        margin: 20px auto;
+        padding: 0 12px;
+      }
+
+      .player-box {
+        border-radius: 7px;
+      }
+
+      video {
+        min-height: 220px;
+      }
+
+      .video-title {
+        font-size: 23px;
+      }
+
+      .notice {
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="header-content">
+
+      <a href="index.html" class="logo">
+        🎬 <span>Movies</span> World
+      </a>
+
+      <a href="index.html" class="home-btn">
+        🏠 Home
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main>
+
+
+    <!-- VIDEO PLAYER -->
+
+    <div class="player-box">
+
+      <video
+        id="videoPlayer"
+        controls
+        playsinline
+        preload="metadata">
+
+        <source
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          type="video/mp4">
+
+        Your browser does not support HTML5 video.
+
+      </video>
+
+    </div>
+
+
+    <!-- VIDEO INFORMATION -->
+
+    <div class="video-info">
+
+      <h1
+        class="video-title"
+        id="videoTitle">
+        My Movie
+      </h1>
+
+      <p class="video-type">
+        🎬 Movies World • Video Player
+      </p>
+
+
+      <a
+        href="index.html"
+        class="back-button">
+        ← Back to Movies
+      </a>
+
+    </div>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+      This website is for your own, licensed, or
+      public-domain video content.
+
+    </div>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      🎬 <strong>Movies World</strong>
+    </p>
+
+    <br>
+
+    <p>
+      Your personal movie & video website
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 Movies World
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // Get movie title from URL
+
+    const urlParams =
+      new URLSearchParams(window.location.search);
+
+
+    const title =
+      urlParams.get("title");
+
+
+    // Change title if provided
+
+    if (title) {
+
+      document.getElementById("videoTitle")
+        .textContent = title;
+
+      document.title =
+        title + " | Movies World";
+
+    }
+
+
+    // Video error handling
+
+    const video =
+      document.getElementById("videoPlayer");
+
+
+    video.addEventListener("error", function() {
+
+      console.log(
+        "Video could not be loaded."
+      );
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>

@@ -23,7 +23,6 @@
       color: white;
     }
 
-    /* HEADER */
     header {
       background: #141414;
       padding: 20px 15px;
@@ -68,7 +67,6 @@
       border-color: #e50914;
     }
 
-    /* HERO */
     .hero {
       max-width: 1200px;
       margin: 25px auto 0;
@@ -100,7 +98,6 @@
       line-height: 1.6;
     }
 
-    /* CATEGORIES */
     .categories {
       display: flex;
       justify-content: center;
@@ -124,7 +121,6 @@
       background: #e50914;
     }
 
-    /* MAIN */
     main {
       max-width: 1200px;
       margin: auto;
@@ -136,7 +132,6 @@
       margin: 20px 0;
     }
 
-    /* MOVIE GRID */
     .movies {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -199,48 +194,6 @@
       background: #b20710;
     }
 
-    /* VIDEO PLAYER */
-    .player-section {
-      display: none;
-      background: #171717;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 10px 0 30px;
-    }
-
-    .player-section h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    video {
-      display: block;
-      width: 100%;
-      max-height: 550px;
-      background: black;
-      border-radius: 8px;
-    }
-
-    .player-buttons {
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .close-player {
-      padding: 9px 15px;
-      border: none;
-      border-radius: 6px;
-      background: #333;
-      color: white;
-      cursor: pointer;
-    }
-
-    .close-player:hover {
-      background: #444;
-    }
-
-    /* NO RESULTS */
     .no-results {
       display: none;
       text-align: center;
@@ -249,7 +202,6 @@
       font-size: 18px;
     }
 
-    /* FOOTER */
     footer {
       margin-top: 30px;
       padding: 30px 15px;
@@ -263,7 +215,6 @@
       color: white;
     }
 
-    /* MOBILE */
     @media (max-width: 600px) {
 
       header {
@@ -322,21 +273,12 @@
         padding: 8px;
         font-size: 12px;
       }
-
-      .player-section {
-        padding: 12px;
-      }
-
-      .player-section h2 {
-        font-size: 18px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
 
     <div class="logo">
@@ -354,7 +296,6 @@
   </header>
 
 
-  <!-- HERO -->
   <section class="hero">
 
     <div class="hero-badge">
@@ -364,14 +305,13 @@
     <h2>Movies & Web Series</h2>
 
     <p>
-      Welcome to Movies World — Your Personal Movie and Web Series Website.
-      Discover Your Own or properly licensed Video Content in One Place.
+      Welcome to Movies World — your personal movie and web series website.
+      Discover your own or properly licensed video content in one place.
     </p>
 
   </section>
 
 
-  <!-- CATEGORIES -->
   <div class="categories">
 
     <button class="category-btn active" data-category="all">
@@ -399,39 +339,6 @@
 
   <main>
 
-    <!-- VIDEO PLAYER -->
-    <div class="player-section" id="playerSection">
-
-      <h2 id="playerTitle">
-        ▶ Now Playing
-      </h2>
-
-      <video id="videoPlayer" controls>
-
-        <!-- TEST VIDEO -->
-        <source
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          type="video/mp4"
-        >
-
-        Your browser does not support video playback.
-
-      </video>
-
-      <div class="player-buttons">
-
-        <button
-          class="close-player"
-          onclick="closePlayer()">
-          ✕ Close Player
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- VIDEOS -->
     <h2 class="section-title">
       Latest Videos
     </h2>
@@ -441,6 +348,7 @@
 
 
       <!-- MOVIE 1 -->
+
       <div class="movie-card" data-category="movie">
 
         <div class="poster">
@@ -458,7 +366,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Movie 01')">
+            onclick="openWatchPage('My Movie 01')">
             ▶ Watch Now
           </button>
 
@@ -468,6 +376,7 @@
 
 
       <!-- MOVIE 2 -->
+
       <div class="movie-card" data-category="bollywood">
 
         <div class="poster">
@@ -485,7 +394,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Bollywood Movie')">
+            onclick="openWatchPage('My Bollywood Movie')">
             ▶ Watch Now
           </button>
 
@@ -495,6 +404,7 @@
 
 
       <!-- MOVIE 3 -->
+
       <div class="movie-card" data-category="hollywood">
 
         <div class="poster">
@@ -512,7 +422,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Hollywood Movie')">
+            onclick="openWatchPage('My Hollywood Movie')">
             ▶ Watch Now
           </button>
 
@@ -522,6 +432,7 @@
 
 
       <!-- SERIES 1 -->
+
       <div class="movie-card" data-category="series">
 
         <div class="poster">
@@ -539,7 +450,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Web Series 01')">
+            onclick="openWatchPage('My Web Series 01')">
             ▶ Watch Now
           </button>
 
@@ -549,6 +460,7 @@
 
 
       <!-- SERIES 2 -->
+
       <div class="movie-card" data-category="series">
 
         <div class="poster">
@@ -566,7 +478,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Web Series 02')">
+            onclick="openWatchPage('My Web Series 02')">
             ▶ Watch Now
           </button>
 
@@ -576,6 +488,7 @@
 
 
       <!-- MOVIE 4 -->
+
       <div class="movie-card" data-category="movie">
 
         <div class="poster">
@@ -593,7 +506,7 @@
 
           <button
             class="watch-btn"
-            onclick="openPlayer('My Movie 02')">
+            onclick="openWatchPage('My Movie 02')">
             ▶ Watch Now
           </button>
 
@@ -605,7 +518,6 @@
     </div>
 
 
-    <!-- NO RESULTS -->
     <div class="no-results" id="noResults">
       No videos found.
     </div>
@@ -613,7 +525,6 @@
   </main>
 
 
-  <!-- FOOTER -->
   <footer>
 
     <p>
@@ -649,20 +560,14 @@
     const noResults =
       document.getElementById("noResults");
 
-    const playerSection =
-      document.getElementById("playerSection");
-
-    const videoPlayer =
-      document.getElementById("videoPlayer");
-
-    const playerTitle =
-      document.getElementById("playerTitle");
-
 
     let selectedCategory = "all";
 
 
-    /* SEARCH + CATEGORY FILTER */
+    /* SEARCH */
+
+    searchInput.addEventListener("input", filterMovies);
+
 
     function filterMovies() {
 
@@ -715,22 +620,14 @@
     }
 
 
-    searchInput.addEventListener(
-      "input",
-      filterMovies
-    );
-
-
-    /* CATEGORY BUTTONS */
+    /* CATEGORIES */
 
     categoryButtons.forEach(button => {
 
       button.addEventListener("click", () => {
 
         categoryButtons.forEach(btn => {
-
           btn.classList.remove("active");
-
         });
 
 
@@ -748,37 +645,15 @@
     });
 
 
-    /* OPEN VIDEO PLAYER */
+    /* WATCH PAGE */
 
-    function openPlayer(title) {
+    function openWatchPage(title) {
 
-      playerTitle.textContent =
-        "▶ " + title;
+      const encodedTitle =
+        encodeURIComponent(title);
 
-
-      playerSection.style.display =
-        "block";
-
-
-      playerSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-
-      videoPlayer.play().catch(() => {});
-
-    }
-
-
-    /* CLOSE VIDEO PLAYER */
-
-    function closePlayer() {
-
-      videoPlayer.pause();
-
-      playerSection.style.display =
-        "none";
+      window.location.href =
+        "watch.html?title=" + encodedTitle;
 
     }
 
